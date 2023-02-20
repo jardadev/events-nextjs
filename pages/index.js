@@ -1,5 +1,7 @@
+import { getFeaturedEvents } from '../dummydata'
+
 function HomePage() {
-	const featuredEvents = ['yerr', 'yerr2', 'yerr3', 'yerr4', 'yerr5'];
+	const featuredEvents = getFeaturedEvents();
 
 	return (
 		<div>
