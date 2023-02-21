@@ -1,8 +1,8 @@
-import Button from '../ui/Button';
-import DateIcon from '../icons/DateIcon';
-import AddressIcon from '../icons/AddressIcon';
-import ArrowRightIcon from '../icons/ArrowRightIcon';
-import styles from './EventItem.module.css';
+import Button from '../ui/button';
+import DateIcon from '../icons/date-icon';
+import AddressIcon from '../icons/address-icon';
+import ArrowRightIcon from '../icons/arrow-right-icon';
+import classes from './EventItem.module.css';
 
 function EventItem(props) {
 	const { title, image, date, location, id } = props;
@@ -17,25 +17,25 @@ function EventItem(props) {
 	const exploreLink = `/events/${id}`;
 
 	return (
-		<li className={styles.item}>
+		<li className={classes.item}>
 			<img src={`/${image}`} alt={title} />
 
-			<div className={styles.content}>
-				<div className={styles.summary}>
+			<div className={classes.content}>
+				<div className={classes.summary}>
 					<h2>{title}</h2>
-					<div className={styles.date}>
+					<div className={classes.date}>
 						<DateIcon />
 						<time>{humanReadableDate}</time>
 					</div>
-					<div className={styles.address}>
+					<div className={classes.address}>
 						<AddressIcon />
 						<address>{formattedAddress}</address>
 					</div>
 				</div>
-				<div className={styles.actions}>
+				<div className={classes.actions}>
 					<Button link={exploreLink}>
 						<span>Explore Event</span>
-						<span className={styles.icon}>
+						<span className={classes.icon}>
 							<ArrowRightIcon />
 						</span>
 					</Button>

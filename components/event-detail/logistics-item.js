@@ -1,14 +1,14 @@
-import styles from './logistics-item.module.css';
+import classes from './logistics-item.module.css';
 
 function LogisticsItem(props) {
 	const { icon: Icon } = props;
 
 	return (
-		<li className={styles.item}>
-			<span className={styles.icon}>
+		<li className={classes.item}>
+			<span className={classes.icon}>
 				<Icon />
 			</span>
-			<span className={styles.content}>{props.children}</span>
+			<span className={classes.content}>{props.children}</span>
 		</li>
 	);
 }
