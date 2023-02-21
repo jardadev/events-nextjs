@@ -1,4 +1,5 @@
-import { getFeaturedEvents } from '../dummydata'
+import { getFeaturedEvents } from '../dummydata';
+import EventList from '../components/events/EventList';
 
 function HomePage() {
 	const featuredEvents = getFeaturedEvents();
@@ -6,10 +7,7 @@ function HomePage() {
 	return (
 		<div>
 			<ul>
-				{/* iterate over each event in array */}
-				{featuredEvents.map((event, index) => (
-					<li key={index}>{event}</li>
-				))}
+				<EventList items={featuredEvents} />
 			</ul>
 		</div>
 	);
