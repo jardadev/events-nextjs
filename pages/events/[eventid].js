@@ -1,21 +1,32 @@
 import { useRouter } from 'next/router';
 import { getEventById } from '../../dummydata';
 
-impo
-function EventDetailPage() { 
+import EventContent from '../../components/event-detail/event-content';
+import EventLogistics from '../../components/event-detail/event-logistics';
+import EventSummary from '../../components/event-detail/event-summary';
+
+function EventDetailPage() {
 	const router = useRouter();
 	const eventId = router.query.eventId; // access query params
 	const event = getEventById(eventId);
 
 	if (!event) {
 		return <p>Event not found</p>;
-    }
+	}
 
 	return (
-		<div>
-			<h1>Event Detail Page</h1>
-			<p>{params.eventid}</p>
-		</div>
+		<>
+			<EventSummary title={event.title} />
+			<EventLogistics
+				date={event.date}
+				address={event.location}
+				image={event.image}
+				imageAlt={event.title}
+			/>
+			<EventContent>
+				<p>{event.description}</p>
+			</EventContent>
+		</>
 	);
 }
 
