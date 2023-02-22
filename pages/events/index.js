@@ -1,11 +1,18 @@
 import { getAllEvents } from '../../dummydata';
+import { useRouter } from 'next/router';
 import EventList from '../../components/events/event-list';
 
 function AllEventsPage() {
 	const events = getAllEvents();
+	const router = useRouter();
+
+	function findEventsHandler(year, month) {
+		router.push(`/events/${year}/${month}`);
+	}
 
 	return (
 		<div>
+			<EventSearch onSearch={findEventsHandler} />
 			<EventList items={events} />
 		</div>
 	);
