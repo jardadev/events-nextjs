@@ -48,7 +48,7 @@ function FilteredEventsPage() {
 	if (!filteredEvents || filteredEvents.length === 0) {
 		return (
 			<ErrorAlert>
-				<p className='center'>No events found.</p>;
+				<p className='center'>No events found.</p>
 			</ErrorAlert>
 		);
 	}
@@ -58,11 +58,10 @@ function FilteredEventsPage() {
 	const date = new Date(numYear, numMonth - 1);
 
 	return (
-		<>
-			<ResultsTitle>
-				<EventList>{filteredEvents}</EventList>
-			</ResultsTitle>
-		</>
+		<div>
+			<ResultsTitle date={date} />
+			<EventList items={filteredEvents} />
+		</div>
 	);
 }
 
